@@ -8,6 +8,7 @@
  $erreur = 'Mauvais id et/ou mdp.';
 ?>
 
+
 <?php
 	session_start();
 	$query = "SELECT * FROM User WHERE Email='$user' AND Mdp='$pwd '";
