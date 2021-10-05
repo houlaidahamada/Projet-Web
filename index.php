@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 if(!isset($_SESSION['suid']))
  {
 	header('Location: pages/login.php');
