@@ -5,7 +5,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Connexion</title>
+    <title>Login</title>
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">
@@ -36,18 +36,15 @@ session_start();
                     }
 					else if(isset($_SESSION['suid']))
 					 {
-						header('Location: ../index.php');
+						header('Location: ..index.php');
 					 }
                 ?>  
 				<div class="form-block">
-					<strong><Label class="labelID">Identifiant </Label></strong>
-						<input type="text" placeholder="Email" name="login"> </br>
-					<strong><Label class="labelPass">Mot de passe </Label></strong>
+					<Label><strong> Identifiant </strong></Label>
+						<input type="text" placeholder="Identifiant" name="login"> </br>
+					<Label><strong> Mot de Passe </strong></Label>
 						<input type="password" placeholder="Mot de passe"name="mdp" > </br>
-					<div id="Validation-Form">
-						<input type="submit" id="loginButton" name="action" value="Connexion">
-						<button id="signLink"><a href="sign.php">Inscription</a></button>
-					</div>
+						<strong><input type="submit" id="loginButton" name="action" value="Connexion"></strong>
 				</div> 
 			</form>
 			<?php
