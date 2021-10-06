@@ -2,7 +2,6 @@
 session_start();
 
 ?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -37,7 +36,7 @@ session_start();
                     }
 					else if(isset($_SESSION['suid']))
 					 {
-						header('Location: ..index.php');
+						header('Location: ../index.php');
 					 }
                 ?>  
 				<div class="form-block">
