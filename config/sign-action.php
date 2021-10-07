@@ -38,5 +38,6 @@
 	{
 		header('Location: ../pages/sign.php');
 		echo "Veuillez renseigner des informations valides.";
+
 	}
 ?>

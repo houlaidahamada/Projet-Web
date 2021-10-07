@@ -3,6 +3,13 @@ body
 	background-color: #E8CCD7;
 }
 
+/*  Formulaire de connexion    */
+
+.form-block input::placeholder
+{
+	color: black;
+}
+
 #loginForm {
     display: flex;
     position: relative;
@@ -22,28 +29,175 @@ body
     align-items: center;
 }
 
+#loginForm .form-block label
+{
+	color: white;
+}
+
+#loginForm .form-block .labelID
+{
+	position: relative;
+	right: 70%;
+}
+
+#loginForm .form-block .labelPass
+{
+	position: relative;
+	right: 38%;
+}
+
 #loginForm .form-block input {
     border: none;
     height: 25px;
     border-radius: 2px;
-	transition: ease-in-out all 0.2s;
-	-moz-transition: ease-in-out all .2s;
-    -webkit-transition: ease-in-out all .2s;
+	margin-top: 3%;
+	color:black;
+	background-color: #ADD8E6;
+	border-bottom: solid black 1px;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
 }
 
 #loginForm .form-block input:focus
 {
 	outline:none;
 	filter: brightness(110%);
-	
+	border: solid black 2px;
+	background-color:white;
 }
 
 #loginForm .form-block #loginButton {
     background-color: #E8CCD7;
     border-bottom: none;
     border-radius: 2px;
+	color:black;
+    font-weight: bold;
+	height: 100%;
+}
+
+#loginForm a
+{
+    text-decoration: none;
+    color: black;
     font-weight: bold;
 }
+
+/*   Formulaire d'inscription    */
+
+#signForm {
+    display: flex;
+    position: relative;
+    top: 30%;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#signForm .form-block {
+    height: 300px;
+    background-color: #ADD8E6;
+    width: 300px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#signForm .form-block label
+{
+	color: white;
+}
+
+#signForm .form-block .labelEmail
+{
+	position: relative;
+    right: 166%;
+}
+
+#signForm .form-block .labelPass
+{
+	position: relative;
+    right: 38%;
+}
+
+#signForm .form-block .labelConfirmPass
+{
+	position: relative;
+    left: 10%;
+}
+
+#signForm .form-block input {
+    border: none;
+    height: 25px;
+    border-radius: 2px;
+	margin-top: 3%;
+	color:black;
+	background-color: #ADD8E6;
+	border-bottom: solid black 1px;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+#signForm .form-block input:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border: solid black 2px;
+	background-color:white;
+}
+
+#signForm .form-block #signButton {
+    background-color: #E8CCD7;
+    border-bottom: none;
+    border-radius: 2px;
+	color:black;
+    font-weight: bold;
+	height: 100%;
+}
+
+#signForm a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* boutons de redirection */
+
+#signLink{
+	border: none;
+    height: 100%;
+    border-radius: 2px;
+	transition: ease-in-out all 0.2s;
+	-moz-transition: ease-in-out all .2s;
+    -webkit-transition: ease-in-out all .2s;
+}
+
+#signLink:focus
+{
+	outline:none;
+	filter: brightness(110%);
+}
+
+#loginLink{
+	border: none;
+    height: 100%;
+    border-radius: 2px;
+	transition: ease-in-out all 0.2s;
+	-moz-transition: ease-in-out all .2s;
+    -webkit-transition: ease-in-out all .2s;
+}
+
+#loginLink:focus
+{
+	outline:none;
+	filter: brightness(110%);
+}
+
+
+
 
 
 

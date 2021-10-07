@@ -13,8 +13,10 @@ session_start();
     <!-- ---- Script ---- -->
     <script src="/js/jquery-3.6.0.min.js"></script>
 	<script src="/js/index.js"></script>
+
 	<script src="/js/validationform.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +28,7 @@ session_start();
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 </head>
+
 
 <header class="siteHeader">
 	<h1> 
@@ -40,7 +43,7 @@ session_start();
 			
 			<!-- ----- Redirection si déjà connecté ---- -->
 			<?php
-                    if(isset($_SESSION['suid']))
+           if(isset($_SESSION['suid']))
 					 {
 						header('Location: ../index.php');
 					 }?>  
@@ -57,13 +60,15 @@ session_start();
 						<strong><Label for="mdp-confirm" class="labelConfirmPass">Confirmation de Mot de Passe </Label></strong>
 							<input type="password" placeholder="Mot de passe" name="mdp-confirm" required> </br>
 						
+
 					<div id="Validation-Form">
 						<input type="submit" id="signButton" name="action" value="Inscription">
 						<button id="loginLink"><a href="login.php">Connexion</a></button>
 					</div>
-					
+
 				</div> 
 			</form>
 		</div>
 </body>
+
 
