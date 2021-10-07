@@ -25,6 +25,13 @@ if(!isset($_SESSION['suid']))
 
 </head>
 
+<header class="siteHeader">
+	<h1> 
+		Vanestarre
+	</h1>
+</header>
+
+
 <body>
 
 </body>

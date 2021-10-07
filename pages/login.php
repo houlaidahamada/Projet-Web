@@ -5,7 +5,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Login</title>
+    <title>Connexion</title>
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">
@@ -13,6 +13,7 @@ session_start();
     <!-- ---- Script ---- -->
     <script src="/js/jquery-3.6.0.min.js"></script>
 	<script src="/js/index.js"></script>
+	<script src="/js/validationform.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,10 +26,16 @@ session_start();
 
 </head>
 
+<header class="siteHeader">
+	<h1> 
+		Vanestarre
+	</h1>
+</header>
+
 <body>
 		<!-- ---- Formulaire de Connexion ---- -->
 		<div class id="loginForm">
-			<form action="../config/login-action.php" method="post">
+			<form class="boiteAValider" action="../config/login-action.php" method="post">
 			<?php
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
@@ -40,11 +47,17 @@ session_start();
 					 }
                 ?>  
 				<div class="form-block">
-					<Label><strong> Identifiant </strong></Label>
-						<input type="text" placeholder="Identifiant" name="login"> </br>
-					<Label><strong> Mot de Passe </strong></Label>
-						<input type="password" placeholder="Mot de passe"name="mdp" > </br>
-						<strong><input type="submit" id="loginButton" name="action" value="Connexion"></strong>
+				
+						<strong><Label for="login" class="labelID">Identifiant </Label></strong>
+							<input type="email" placeholder="Email" name="login" required> </br>
+							
+						<strong><Label for="mdp" class="labelPass">Mot de passe </Label></strong>
+							<input type="password" placeholder="Mot de passe"name="mdp" required> </br>
+						
+					<div id="Validation-Form">
+						<input type="submit" id="loginButton" name="action" value="Connexion">
+						<button id="signLink"><a href="sign.php">Inscription</a></button>
+					</div>
 				</div> 
 			</form>
 			<?php
