@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+@charset "utf-8";
+
+
+/* Menu Page */
+
+#navHeader, #bodyPrincipal{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+nav{
+  background:#495d63;
+  padding: 0px 20px;
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+
+nav ul li.logo{
+  flex: 1;
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+nav ul li a{
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: .4s;
+}
+nav ul li:hover a{
+  color: blue;
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+
+@media all and (max-width: 900px){
+  nav{
+    padding: 5px 30px;
+  }
+  nav ul li.items{
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show{
+    display: block;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+}
+
+/* corps de la page */
+
+body
+{
+	background-color: #E8CCD7;
+}
+
+#postCreation
+{
+	width: 99%;
+    border-radius: 2px;
+    border: none;
+    height: 100%;
+    font-weight: 700;
+}
+
+/*   Header      */
+
+.siteHeader
+{
+    display: flex;
+    justify-content: center;
+}
+
+.siteHeader h1
+{
+    text-transform: uppercase;
+    color: white;
+    font-family: helvetica;
+    font-weight: 800;
+    border-bottom: solid white 5px;
+
+}
+
+/*  Formulaire de connexion    */
+
+.form-block input::placeholder
+{
+	color: black;
+}
+
+#loginForm {
+    display: flex;
+    position: relative;
+    top: 15%;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#loginForm .form-block {
+    height: 300px;
+    background-color: #ADD8E6;
+    width: 300px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm .form-block label
+{
+	color: white;
+}
+
+#loginForm .form-block .labelID
+{
+	position: relative;
+	right: 70%;
+}
+
+#loginForm .form-block .labelPass
+{
+	position: relative;
+	right: 38%;
+}
+
+#loginForm .form-block input {
+    border: none;
+    height: 25px;
+    border-radius: 2px;
+	margin-top: 3%;
+	color:black;
+	background-color: #ADD8E6;
+	border-bottom: solid black 1px;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+#loginForm .form-block input:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border: solid black 2px;
+	background-color:white;
+}
+
+#loginForm .form-block #loginButton {
+    background-color: #E8CCD7;
+    border-bottom: none;
+    border-radius: 2px;
+	color:black;
+    font-weight: bold;
+	height: 100%;
+}
+
+#loginForm .form-block #loginButton:focus
+{
+	border:none;
+}
+
+#loginForm a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/*   Formulaire d'inscription    */
+
+#signForm {
+    display: flex;
+    position: relative;
+    top: 15%;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#signForm .form-block {
+    height: 300px;
+    background-color: #ADD8E6;
+    width: 300px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#signForm .form-block label
+{
+	color: white;
+}
+
+#signForm .form-block .labelEmail
+{
+	position: relative;
+    right: 166%;
+}
+
+#signForm .form-block .labelPass
+{
+	position: relative;
+    right: 38%;
+}
+
+#signForm .form-block .labelConfirmPass
+{
+	position: relative;
+    left: 10%;
+}
+
+#signForm .form-block input {
+    border: none;
+    height: 25px;
+    border-radius: 2px;
+	margin-top: 3%;
+	color:black;
+	background-color: #ADD8E6;
+	border-bottom: solid black 1px;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+#signForm .form-block input:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border: solid black 2px;
+	background-color:white;
+}
+
+#signForm .form-block #signButton {
+    background-color: #E8CCD7;
+    border-bottom: none;
+    border-radius: 2px;
+	color:black;
+    font-weight: bold;
+	height: 100%;
+}
+
+#signForm .form-block #signButton:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border:none;
+}
+
+#signForm a
+{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* boutons de redirection */
+
+#signLink{
+	border: none;
+    height: 100%;
+    border-radius: 2px;
+	transition: ease-in-out all 0.2s;
+	-moz-transition: ease-in-out all .2s;
+    -webkit-transition: ease-in-out all .2s;
+}
+
+#signLink:focus
+{
+	outline:none;
+	filter: brightness(110%);
+}
+
+#loginLink{
+	border: none;
+    height: 100%;
+    border-radius: 2px;
+	transition: ease-in-out all 0.2s;
+	-moz-transition: ease-in-out all .2s;
+    -webkit-transition: ease-in-out all .2s;
+}
+
+#signForm .form-block #loginLink:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border:none;
+}
+
+#loginForm .form-block #signLink:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border:none;
+}
+
+/*	Posts	*/
+
+.centrePost
+{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+#postBody
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.boitePost{
+    display: flex;
+    height: 178px;
+    width: 370px;
+    align-content: center;
+    justify-content: center;
+    position: absolute;
+    top: 35%;
+}
+
+.boitePost h2
+{
+	position: absolute;
+    bottom: 100%;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.boitePost #postForm
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.boitePost #postForm input
+{
+    height: 51%;
+    border-radius: 5px;
+    border: solid 0.8px;
+    width: 100%;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+.boitePost #postForm textarea
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 20%;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+.boitePost #postForm input
+{
+    height: 51%;
+    border-radius: 5px;
+    border: solid 0.8px;
+    width: 100%;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+.boitePost #postForm textarea
+{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 20%;
+	transition: ease-in-out all 0.3s;
+	-moz-transition: ease-in-out all .3s;
+    -webkit-transition: ease-in-out all .3s;
+}
+
+.boitePost #postForm button
+{
+    width: 34%;
+    position: relative;
+    top: 40%;
+    border-radius: 2px;
+    border: none;
+    height: 30%;
+    font-weight: 700;
+}
+
+.boitePost #postForm button{
+	outline:none;
+	filter: brightness(110%);
+	border:none;
+}
+
+.boitePost #postForm input:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border: solid black 2px;
+	background-color:white;
+}
+
+.boitePost #postForm textarea:focus
+{
+	outline:none;
+	filter: brightness(110%);
+	border: solid black 2px;
+	background-color:white;
+}
+
+
+/* Contenu de page  */
+
+#contenu
+{
+    display: flex;
+    justify-content: center;
+}
+
+#contenu a
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
