@@ -28,6 +28,23 @@
 				<button name="new_post">Ajouter le Post</button>
 		</form>
 	</div>
+
+    <div class="Posts_published">
+        <h2>Post</h2>
+        <?php
+        require_once ('../config/db_connect.php');
+
+        $sql = 'SELECT title, content FROM ' . \'posts\' . ' ORDER BY '.\'created_at\'';
+        $query = sqlite_query($dbLink, $sql);
+        $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($posts as $post)
+        {
+            echo $post['title'];
+            echo $post['content'];
+        }
+        ?>
+    </div>
 </div>
 
 <button name="retour" id="retourPost"><a href="../index.php">Annuler</</button>
