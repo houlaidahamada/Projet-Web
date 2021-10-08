@@ -33,7 +33,7 @@ if(!isset($_SESSION['suid']))
 			  <ul>
 				 <li class="logo">Vanestarre</li>
 				 <li class="items"><a href="#">Profil</a></li>
-				 <li class="items"><a href="#">Deconnexion</a></li>
+				 <li class="items"><a href="config/deconnexion.php" >Deconnexion</a></li>
 				 <li class="items"><a href="#">Recherche</a></li>
 				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
 			  </ul>
@@ -50,4 +50,3 @@ if(!isset($_SESSION['suid']))
 	</div>
 </body>
 </html>
-
