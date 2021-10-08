@@ -13,6 +13,8 @@ session_start();
     <!-- ---- Script ---- -->
     <script src="/js/jquery-3.6.0.min.js"></script>
 	<script src="/js/index.js"></script>
+	<script src="/js/validationform.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,38 +27,43 @@ session_start();
 
 </head>
 
+<header class="siteHeader">
+	<h1> 
+		Vanestarre
+	</h1>
+</header>
+
 <body>
 		<!-- ---- Formulaire d'Inscription ---- -->
-		<div class id="signForm">
-			<form action="../config/sign-action.php" method="post">
+		<div id="signForm">
+			<form class="boiteAValider" action="../config/sign-action.php" method="post">
+			
+			<!-- ----- Redirection si déjà connecté ---- -->
 			<?php
-                    if(isset($_SESSION["error"])){
-                        $error = $_SESSION["error"];
-                        echo "<span>$error</span>";
-                    }
-					else if(isset($_SESSION['suid']))
+                    if(isset($_SESSION['suid']))
 					 {
 						header('Location: ../index.php');
-					 }
-                ?>  
+					 }?>  
+				
+				<span id="error"></span>
 				<div class="form-block">
-					<strong><Label class="labelEmail">Email</Label></strong>
-						<input type="text" placeholder="Identifiant" name="email"> </br>
-					<strong><Label class="labelPass"> Mot de Passe </Label></strong>
-						<input type="password" placeholder="Mot de passe" name="mdp"> </br>
-					<strong><Label class="labelConfirmPass">Confirmation de Mot de Passe </Label></strong>
-						<input type="password" placeholder="Mot de passe" name="mdp-confirm"> </br>
+				
+						<strong><Label for="email" class="labelEmail">Email</Label></strong>
+							<input type="email" placeholder="Identifiant" name="email" required> </br>
+							
+						<strong><Label for="mdp" class="labelPass">Mot de Passe</Label></strong>
+							<input type="password" placeholder="Mot de passe" name="mdp" required> </br>
+							
+						<strong><Label for="mdp-confirm" class="labelConfirmPass">Confirmation de Mot de Passe </Label></strong>
+							<input type="password" placeholder="Mot de passe" name="mdp-confirm" required> </br>
+						
 					<div id="Validation-Form">
 						<input type="submit" id="signButton" name="action" value="Inscription">
 						<button id="loginLink"><a href="login.php">Connexion</a></button>
 					</div>
+					
 				</div> 
 			</form>
-			<?php
-    unset($_SESSION["error"]);
-?>
 		</div>
-		
-		
-
 </body>
+

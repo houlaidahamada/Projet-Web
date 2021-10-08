@@ -19,7 +19,7 @@
 ?>
 
 <?php
-	if($mdp == $mdpconfirm){
+	if(($mdp == $mdpconfirm) && ($mdp != NULL) && ($email != NULL)){
 		$query = "INSERT INTO user (Email, Mdp) VALUES ('$email', '$mdp')";
 		 if(!($dbResult = mysqli_query($dbLink, $query))){
 				 echo 'Erreur dans requête<br />'; 
@@ -30,11 +30,13 @@
 				 exit();
 			}
 		else{
+				header('Location: ../pages/login.php');
 				echo "Vous allez recevoir un mail à l'adresse indiquée.";
 			}
 	}
 	else
 	{
-		echo 'Les mots de passes ne correspondent pas.';
+		header('Location: ../pages/sign.php');
+		echo "Veuillez renseigner des informations valides.";
 	}
 ?>
