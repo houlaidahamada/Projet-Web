@@ -34,7 +34,7 @@ session_start();
 
 <body>
 		<!-- ---- Formulaire de Connexion ---- -->
-		<div class id="loginForm">
+		<div id="loginForm">
 			<form class="boiteAValider" action="../config/login-action.php" method="post">
 			<?php
                     if(isset($_SESSION["error"])){
@@ -58,12 +58,13 @@ session_start();
 						<input type="submit" id="loginButton" name="action" value="Connexion">
 						<button id="signLink"><a href="sign.php">Inscription</a></button>
 					</div>
-				</div> 
+				</div>
 			</form>
 			<?php
     unset($_SESSION["error"]);
 ?>
 		</div>
+		<div id="lienBonus"><a href="nouveaupass.php">Mot de passe oublié ?</a></div>
 		
 		
 
