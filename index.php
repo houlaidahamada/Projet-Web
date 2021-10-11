@@ -41,6 +41,7 @@ if(!isset($_SESSION['suid']))
 </header>
 
 
+
 <body id="bodyPrincipal">
 
 	<div id="contenu">
