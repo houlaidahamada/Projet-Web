@@ -2,12 +2,11 @@
 session_start();
 
 if(!isset($_SESSION['suid']))
- {
-	header('Location: pages/login.php');
- }
+{
+    header('Location: pages/login.php');
+}
 
 ?>
-<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,18 +14,18 @@ if(!isset($_SESSION['suid']))
     <title>VANESTARRE</title>
 
     <!-- ---- CSS ---- -->
-    <link rel="stylesheet" href="style/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     <!-- ---- Script ---- -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/index.js"></script>
-	<script src="js/navbar.js"></script>
-	
-	<!-- ---- Fonts ---- -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/navbar.js"></script>
+
+    <!-- ---- Fonts ---- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
 </head>
 
@@ -43,14 +42,6 @@ if(!isset($_SESSION['suid']))
         </nav>
 </header>
 
+<body id="userBody">
 
-
-<body id="bodyPrincipal">
-
-	<div id="contenu">
-		<div class="postsList">
-			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
-		</div>
-	</div>
 </body>
-</html>

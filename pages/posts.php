@@ -19,12 +19,17 @@
 
 <body id="postBody">
 	
+<div class="centrePost">	
 	<div class="boitePost">
 		<h2>Nouveau Post</h2>
-		<form id="postForm" action="../config/post-action.php" method="GET">
+		<form method="GET" id="postForm" action="../config/post-action.php">
 				<input type="text" name="title" placeholder="Titre Post" required>
 				<textarea name="content" required></textarea>
-				<button name="new_post" required>Ajouter le Post</button>
+				<button name="new_post">Ajouter le Post</button>
 		</form>
 	</div>
+</div>
+
+<button name="retour" id="retourPost"><a href="../index.php">Annuler</</button>
+
 </body>

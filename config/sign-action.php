@@ -1,12 +1,9 @@
 <?php
- $host = '127.0.0.1';
- $login = 'root';
- $dbLink = mysqli_connect($host, $login)
- or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-?>
-
-<?php
- mysqli_select_db($dbLink , 'projet-web') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
+ $host = 'mysql-projetweb2.alwaysdata.net';
+ $login = '245104';
+ $mysqlpass = 'marioChampi';
+ $dbLink = mysqli_connect($host, $login, $mysqlpass) or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+ mysqli_select_db($dbLink, 'projetweb2_vanes')  or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 );?>
 
 
@@ -19,6 +16,7 @@
 ?>
 
 <?php
+	session_start();
 	if(($mdp == $mdpconfirm) && ($mdp != NULL) && ($email != NULL)){
 		$query = "INSERT INTO user (Email, Mdp) VALUES ('$email', '$mdp')";
 		 if(!($dbResult = mysqli_query($dbLink, $query))){
