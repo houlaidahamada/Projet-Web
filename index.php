@@ -7,6 +7,7 @@ if(!isset($_SESSION['suid']))
  }
 
 ?>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -32,11 +33,14 @@ if(!isset($_SESSION['suid']))
 		<nav id="navigationMenu">
 			  <ul>
 				 <li class="logo">Vanestarre</li>
-				 <li class="items"><a href="#">Profil</a></li>
+                 <li class="items"><a href="index.php">Acceuil</a></li>
+				 <li class="items"><a href="pages/user.php"></a></li>
 				 <li class="items"><a href="config/deconnexion.php" >Deconnexion</a></li>
-				 <li class="items"><a href="#">Recherche</a></li>
 				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
 			  </ul>
+              <ul>
+                  <li class="items"><a href="#">Recherche</a></li>
+              </ul>
 		</nav id="navigationMenu">
 </header>
 
