@@ -14,6 +14,7 @@ session_start();
     <script src="/js/jquery-3.6.0.min.js"></script>
 	<script src="/js/index.js"></script>
 	<script src="/js/validationform.js"></script>
+
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">

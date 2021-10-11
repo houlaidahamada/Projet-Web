@@ -34,9 +34,9 @@
         <?php
         require_once ('../config/db_connect.php');
 
-        $sql = 'SELECT title, content FROM ' . \'posts\' . ' ORDER BY '.\'created_at\'';
-        $query = sqlite_query($dbLink, $sql);
-        $posts = $query->fetchAll(PDO::FETCH_ASSOC);
+        $sql = 'SELECT title, content FROM posts ORDER BY created_at;';
+        $query = mysqli_query($dbLink, $sql);
+        $posts = mysqli_fetch_assoc($query);
 
         foreach($posts as $post)
         {
@@ -48,5 +48,24 @@
 </div>
 
 <button name="retour" id="retourPost"><a href="../index.php">Annuler</</button>
+
+
+<nav>
+    <?php include ('../config/pagination.php'); ?>
+    <ul class="pagination">
+        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+            <a href="./?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+        </li>
+        <?php for($page = 1; $page <= $nb_page; $page++): ?>
+            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                <a href="./?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+            </li>
+        <?php endfor ?>
+        <li class="page-item <?= ($currentPage == $nb_page) ? "disabled" : "" ?>">
+            <a href="./?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+        </li>
+    </ul>
+</nav>
+
 
 </body>

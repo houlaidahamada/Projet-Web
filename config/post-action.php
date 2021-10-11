@@ -11,8 +11,9 @@
 		 $title = $_GET['title'];
 		 $content = $_GET['content'];
 
-		$query = "INSERT into posts(title, content) VALUES('$title', '$content')";
+		$query = "INSERT into posts(title, content) VALUES('$title', '$content');";
 		mysqli_query($dbLink, $query);
 	 }
+
 ?>
 
