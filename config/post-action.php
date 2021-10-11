@@ -15,7 +15,15 @@
 
 
 		$query = "INSERT into posts(title, content, keywords) VALUES('$title', '$content', '$keywords')";
-		mysqli_query($dbLink, $query);
+		if(!($dbResult = mysqli_query($dbLink, $query))){
+				header("Location: ../pages/posts.php");
+				$_SESSION['error'] = "Erreur lors de l'envoi du Post";
+			}
+			else
+			{
+				header("Location: ../index.php");
+				$_SESSION['success'] = "Votre Post a été envoyé.";
+			}
 	 }
 ?>
 

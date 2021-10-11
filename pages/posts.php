@@ -9,6 +9,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/index.js"></script>
 	<script src="/js/validationform.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +24,30 @@
 	<div class="boitePost">
 		<h2>Nouveau Post</h2>
 		<form method="GET" id="postForm" action="../config/post-action.php">
+				<?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+					else if(isset($_SESSION['suid']))
+					 {
+						header('Location: ../index.php');
+					 }
+					 else if(isset($_SESSION["success"]))
+					 {
+						 $success = $_SESSION["success"];
+						 echo "<span>$success</span>";
+					 }
+                ?>
 				<input type="text" name="title" placeholder="Titre Post" required>
-				<textarea name="content" required></textarea>
-                <input type="text" name="keywords" placeholder="Mots cléfs" required>
+				<textarea name="content" placeholder="Taille maximale de 50 caractères." required maxlength='50'></textarea>
+                <input type="text" id="keywords" name="keywords" placeholder="Mots cléfs" required>
 				<button name="new_post">Ajouter le Post</button>
 		</form>
+		<?php
+			unset($_SESSION["error"]);
+			unset($_SESSION["success"]);
+		?>
 	</div>
 </div>
 
