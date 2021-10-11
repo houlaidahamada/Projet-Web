@@ -79,6 +79,13 @@ nav ul li.btn.hide i:before{
   }
 }
 
+/*   Page Utilisateur    */
+#userBody
+{
+    margin: 0;
+    padding: 0;
+}
+
 /* corps de la page */
 
 body

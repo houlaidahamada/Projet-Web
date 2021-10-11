@@ -42,6 +42,6 @@ if(!isset($_SESSION['suid']))
         </nav>
 </header>
 
-<body>
+<body id="userBody">
 
 </body>
