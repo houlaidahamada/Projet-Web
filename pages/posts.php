@@ -25,6 +25,7 @@
 		<form method="GET" id="postForm" action="../config/post-action.php">
 				<input type="text" name="title" placeholder="Titre Post" required>
 				<textarea name="content" required></textarea>
+                <input type="text" name="keywords" placeholder="Mots cléfs" required>
 				<button name="new_post">Ajouter le Post</button>
 		</form>
 	</div>
