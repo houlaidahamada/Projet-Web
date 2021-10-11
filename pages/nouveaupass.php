@@ -32,15 +32,38 @@ session_start();
 	</h1>
 </header>
 
-<body>
+<body id="passBody">
 	<div id="forgetForm"> 
 		<div class="form-block">
+		
+			<!-- ---- Formulaire d'oubli de MDP ---- -->
 			<form method="POST" action="../config/mdp-action.php">
+			
+			<?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+					else if(isset($_SESSION['suid']))
+					 {
+						header('Location: ../index.php');
+					 }
+					 else if(isset($_SESSION['success']))
+					 {
+						 $success = $_SESSION['success'];
+						 echo "<span>$success</span>";
+					 }
+                ?>  
+				
 				  <p>Entrez votre adresse Mail pour recevoir le lien de réinitialisation.</p>
 				  <input type="email" name="email" required>
 				  <input id="forgetSubmit" type="submit" name="submit_email">
 				  <button><a href="login.php">Retour</a></button>
 			</form>
+			<?php
+				unset($_SESSION["error"]);
+				unset($_SESSION["success"]);
+			?>
 		</div>
 	</div>
   </body>

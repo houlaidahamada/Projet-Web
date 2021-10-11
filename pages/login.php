@@ -9,11 +9,14 @@ session_start();
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
 
     <!-- ---- Script ---- -->
     <script src="/js/jquery-3.6.0.min.js"></script>
 	<script src="/js/index.js"></script>
 	<script src="/js/validationform.js"></script>
+	<script src="/js/showPass.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +48,11 @@ session_start();
 					 {
 						header('Location: ../index.php');
 					 }
+					 else if(isset($_SESSION["success"]))
+					 {
+						 $success = $_SESSION["success"];
+						 echo "<span>$success</span>";
+					 }
                 ?>  
 				<div class="form-block">
 				
@@ -52,7 +60,8 @@ session_start();
 							<input type="email" placeholder="Email" name="login" required> </br>
 							
 						<strong><Label for="mdp" class="labelPass">Mot de passe </Label></strong>
-							<input type="password" placeholder="Mot de passe"name="mdp" required> </br>
+							<input id="mdp" type="password" placeholder="Mot de passe"name="mdp" required>
+						    <i id="oeil" class="bi bi-eye-slash" id="togglePassword" onclick="showPass()"></i></br>
 						
 					<div id="Validation-Form">
 						<input type="submit" id="loginButton" name="action" value="Connexion">
@@ -61,8 +70,9 @@ session_start();
 				</div>
 			</form>
 			<?php
-    unset($_SESSION["error"]);
-?>
+				unset($_SESSION["error"]);
+				unset($_SESSION["success"]);
+			?>
 		</div>
 		<div id="lienBonus"><a href="nouveaupass.php">Mot de passe oublié ?</a></div>
 		

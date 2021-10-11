@@ -124,6 +124,12 @@ body
     font-weight: 600;
 }
 
+#passBody
+{
+	margin:0;
+	padding:0;
+}
+
 #forgetForm .form-block
 {
 	display: flex;
@@ -242,6 +248,13 @@ body
     -webkit-transition: ease-in-out all .3s;
 }
 
+#loginForm .form-block i
+{
+    margin-left: 48%;
+    position: relative;
+    bottom: 7%;
+}
+
 #loginForm .form-block input:focus
 {
 	outline:none;
@@ -271,6 +284,12 @@ body
     font-weight: bold;
 }
 
+#loginForm span{
+    position: relative;
+    left: 10%;
+    font-weight: 600;
+}
+
 /*   Formulaire d'inscription    */
 
 #signForm {
@@ -290,6 +309,13 @@ body
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#signForm .form-block i
+{
+	margin-left: 48%;
+    position: relative;
+    bottom: 7%;
 }
 
 #signForm .form-block label
@@ -319,7 +345,6 @@ body
     border: none;
     height: 25px;
     border-radius: 2px;
-	margin-top: 3%;
 	color:black;
 	background-color: #ADD8E6;
 	border-bottom: solid black 1px;
