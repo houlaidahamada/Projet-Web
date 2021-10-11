@@ -11,7 +11,8 @@
 	 {
 		 $title = $_GET['title'];
 		 $content = $_GET['content'];
-		 $keywords = $_GET['keywords']
+		 $keywords = $_GET['keywords'];
+
 
 		$query = "INSERT into posts(title, content, keywords) VALUES('$title', '$content', '$keywords')";
 		mysqli_query($dbLink, $query);
