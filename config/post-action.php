@@ -1,8 +1,9 @@
 <?php
-	 $host = '127.0.0.1';
-	 $root = 'root';
-	 $dbLink = mysqli_connect($host, $root) or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-	 mysqli_select_db($dbLink , 'projet-web') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+	 $host = 'mysql-projetweb2.alwaysdata.net';
+	 $login = '245104';
+	 $mysqlpass = 'marioChampi';
+	 $dbLink = mysqli_connect($host, $login, $mysqlpass) or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+	 mysqli_select_db($dbLink , 'projetweb2_vanes') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 	 
 
 
@@ -10,10 +11,19 @@
 	 {
 		 $title = $_GET['title'];
 		 $content = $_GET['content'];
+		 $keywords = $_GET['keywords'];
 
-		$query = "INSERT into posts(title, content) VALUES('$title', '$content');";
-		mysqli_query($dbLink, $query);
+
+		$query = "INSERT into posts(title, content, keywords) VALUES('$title', '$content', '$keywords')";
+		if(!($dbResult = mysqli_query($dbLink, $query))){
+				header("Location: ../pages/posts.php");
+				$_SESSION['error'] = "Erreur lors de l'envoi du Post";
+			}
+			else
+			{
+				header("Location: ../index.php");
+				$_SESSION['success'] = "Votre Post a été envoyé.";
+			}
 	 }
-
 ?>
 
