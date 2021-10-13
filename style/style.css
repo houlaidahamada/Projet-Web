@@ -117,10 +117,33 @@ nav ul li.btn.hide i:before{
 
 /* corps de la page */
 
-body
-{
-	/*background-color: #E8CCD7;*/
-    background-image: url(../ressources/img/Fond.png);
+body {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+    margin:0;
+    padding:0;
+    background-size: 100% ;
+    width:100%;
+    color:black;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    height: 100%; width: 100%;
+
+    background: linear-gradient(
+            rgba(225, 225, 225, 0.6),
+            rgba(225, 225, 225, 0.6)
+    ),url(../ressources/img/Fond.png);
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content /
+    -webkit-filter: blur(8px);
+    -webkit-background-size: cover; / pour Chrome et Safari /
+    -moz-background-size: cover; / pour Firefox /
+    -o-background-size: cover; / pour Opera /
+    background-size: cover; / version standardisée */
 }
 
 #postCreation
