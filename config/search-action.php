@@ -16,11 +16,10 @@
                 $query = mysqli_query($conn, $search_string);
                 $result_count = mysqli_num_rows($query);
 
-                echo '<article id="resultats"><b><u>'.number_format($result_count).'</u></b> résultat trouvé';
+                echo '<article id="newPost"><b><u>'.number_format($result_count).'</u></b> résultat trouvé';
                 echo '<h2>Votre recherche pour <i>"'.$display_words.'"</i></h2>';
                 if ($result_count > 0){
 
-                    echo '<table id="newPost">';
 
 
                     while ($row = mysqli_fetch_assoc($query)){
