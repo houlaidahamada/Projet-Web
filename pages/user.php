@@ -35,9 +35,6 @@ session_start();
             <li class="items"><a href="../config/deconnexion.php" >Deconnexion</a></li>
             <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
         </ul>
-        <ul>
-            <li class="items"><a href="#">Recherche</a></li>
-        </ul>
     </nav id="navigationMenu">
 </header>
 
