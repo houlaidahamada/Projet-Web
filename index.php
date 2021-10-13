@@ -49,9 +49,11 @@ if(!isset($_SESSION['suid']))
 <body id="bodyPrincipal">
 
 	<div id="contenu">
-	
-		
-			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
+	    <?php
+		 if(isset($_SESSION['statut'] == 'admin')){
+			echo '<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>'
+			}
+		?>
 		
 		<div class="barreFlex" style="display: flex; flex-direction: row;">
 			<div class="Barre" style="display: none; margin-top: 10px;">
@@ -100,17 +102,17 @@ if(!isset($_SESSION['suid']))
 				$titre = $post['title'];
 				$contenu = $post['content'];
                 $keywords = $post['keywords'];
-				echo "
-				<form method='POST' action=''>
-				<article id='newPost'>
-				<article>
-				<h1>$titre</h1>
-				<p>$contenu</p>
-				<p>β$keywords</p>
-			    </article>".
-                likes() .
-				"</article>"
-				;
+                    echo "
+                    <form method='POST' action=''>
+                    <article id='newPost'>
+                    <article>
+                    <h1>$titre</h1>
+                    <p>$contenu</p>
+                    <p>β$keywords</p>
+                    </article>".
+                    likes() .
+                    "</article>"
+                    ;
 				}
 			?>
 			 </div>

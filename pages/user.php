@@ -119,7 +119,7 @@ session_start();
         </div>";
 
                     if(isset($_SESSION['error']))
-                    {
+                    { 
                         $error = $_SESSION['error'];
                         echo '<span>$error</span>';
                     }
