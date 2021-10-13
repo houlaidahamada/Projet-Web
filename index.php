@@ -87,8 +87,7 @@ if(!isset($_SESSION['suid']))
     flex-direction: column;
     width: 50%;
 ">
-		<?php include 'config/search-action.php'?> 
-</h2>
+		<?php include 'config/search-action.php'?>
 		<div id="timeline">
 		<?php 
 			require_once ('config/db_connect.php');
@@ -100,8 +99,10 @@ if(!isset($_SESSION['suid']))
 				$titre = $post['title'];
 				$contenu = $post['content'];
 				echo "<article id='newPost'>
+				<article>
 				<h1>$titre</h1>
 				<p>$contenu</p>
+			    </article>
 				</article>";
 			}
 		?>
