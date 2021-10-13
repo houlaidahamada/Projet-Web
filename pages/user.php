@@ -68,7 +68,7 @@ session_start();
                         align-items: center;
                         width: 100%;'>
                     <!-- Salutation du membre -->
-                    <h3>Bienvenue dans vos parametres";
+                    <h3>Bienvenue dans vos parametres ";
                     echo($_SESSION['name']);
                     echo "</h3><br>
                     <div id='aleatlike'>
