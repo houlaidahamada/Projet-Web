@@ -38,7 +38,7 @@ session_start();
     </nav id="navigationMenu">
 </header>
                <?php
-                if(isset($_SESSION['error'])
+                if(isset($_SESSION['error']))
                 {
                     $error = $_SESSION['error'];
                     echo '<span>$error</span>'
