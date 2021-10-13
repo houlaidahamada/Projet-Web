@@ -101,8 +101,6 @@ if(isset($_POST['plus'])) {
     }
 }
 
-var_dump($_POST);
-var_dump($_SESSION);
 //if button is pressed, increment counter
 if($_SESSION['emoji'] == 0){
 

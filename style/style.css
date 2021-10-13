@@ -642,6 +642,85 @@ body
 	align-self: flex-start;
 }
 
+/* Likes */
+
+.lignes{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input.like
+{
+    background:url(../ressources/img/coeur.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.plus
+{
+    background:url(../ressources/img/plus.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.moins
+{
+    background:url(../ressources/img/moins.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.lol
+{
+    background:url(../ressources/img/lol.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.waw
+{
+    background:url(../ressources/img/waw.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.love
+{
+    background:url(../ressources/img/love.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.colere
+{
+    background:url(../ressources/img/colere.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.cool
+{
+    background:url(../ressources/img/cool.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
 
 
 
