@@ -36,6 +36,10 @@ session_start();
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser')){
         				        echo "<li class='items'><a href='pages/user.php'>Utilisateur</a></li>";
         				    }
+        				    else
+        				    {
+        				        echo "<button id='signLink'><a href='pages/sign.php'>Inscription</a></button>";
+        				    }
         				 ?>
         				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
