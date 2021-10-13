@@ -20,14 +20,14 @@
                 echo '<h2>Votre recherche pour <i>"'.$display_words.'"</i></h2>';
                 if ($result_count > 0){
 
-                    echo '<table class="search">';
+                    echo '<table id="newPost">';
 
 
                     while ($row = mysqli_fetch_assoc($query)){
                         echo '
                             <h1>'.$row['title'].'</h1>
                             <p>'.$row['content'].'</p>
-                            echo <p>β</p> . <i>'.$row['keywords'].'</i>';
+                            <i>'.$row['keywords'].'</i>';
                     }
                     
                     echo '</article>';
