@@ -37,7 +37,11 @@ if(!isset($_SESSION['suid']))
         			  <ul>
         				 <li class="logo">Vanestarre</li>
                          <li class="items"><a href="index.php">Accueil</a></li>
-        				 <li class="items"><a href="pages/user.php">Utilisateur</a></li>
+                         <?php
+                            if(($_SESSION['statut'] == 'admin') && ($_SESSION['superuser'])){
+        				        echo "<li class='items'><a href='pages/user.php'>Utilisateur</a></li>";
+        				    }
+        				 ?>
         				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
                          <li class="items"><a href="#" onclick="afficherBarre()">Recherche</a></li>
@@ -50,8 +54,8 @@ if(!isset($_SESSION['suid']))
 
 	<div id="contenu">
 	    <?php
-		 if(isset($_SESSION['statut'] == 'admin')){
-			echo "<button id='postCreation'><a href='pages/posts.php'>Nouveau Post</a></button>"
+		 if($_SESSION['statut'] == 'admin'){
+			echo "<button id='postCreation'><a href='pages/posts.php'>Nouveau Post</a></button>";
 			}
 		?>
 		
@@ -98,22 +102,37 @@ if(!isset($_SESSION['suid']))
 			$sql = 'SELECT * FROM posts ORDER BY created_at;';
 			$query = mysqli_query($dbLink, $sql);
 			while($post = mysqli_fetch_assoc($query)){
-				$posts[] = $post;
-				$titre = $post['title'];
-				$contenu = $post['content'];
-                $keywords = $post['keywords'];
-                    echo "
-                    <form method='POST' action=''>
-                    <article id='newPost'>
-                    <article>
-                    <h1>$titre</h1>
-                    <p>$contenu</p>
-                    <p>β$keywords</p>
-                    </article>".
-                    likes() .
-                    "</article>"
-                    ;
-				}
+            				$posts[] = $post;
+            				$titre = $post['title'];
+            				$contenu = $post['content'];
+                            $keywords = $post['keywords'];
+                            if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
+            					{
+            						echo "
+            								<form method='POST' action=''>
+            								<article id='newPost'>
+            								<article>
+            								<h1>$titre</h1>
+            								<p>$contenu</p>
+            								<p>β$keywords</p>
+            								</article>".
+            								likes().
+            								"</article>";
+            					}
+            					else{
+                                echo "
+                                <form method='POST' action=''>
+                                <article id='newPost'>
+                                <article>
+                                <h1>$titre</h1>
+                                <p>$contenu</p>
+                                <p>β$keywords</p>
+                                </article>".
+                                    likes().
+                                "</article>"
+                                ;
+                                }
+            				}
 			?>
 			 </div>
 
