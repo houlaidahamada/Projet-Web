@@ -53,7 +53,7 @@ if(!isset($_SESSION['suid']))
 		
 			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
 		
-		<div class="barreFlex" style="display: flex; flex-direction: row;">
+		<div class="barreFlex" style="display: flex; flex-direction: row; margin-top = 10px;">
 			<div class="Barre" style="display: none;">
 				<form action="" method="GET" name="">
 					<div class="form-outline">
