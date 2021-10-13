@@ -105,9 +105,21 @@ if(!isset($_SESSION['suid']))
 				<p>$contenu</p>
 				<p>$keywords</p>
 			    </article>
-				</article>"
-				include 'config/likes.php';
-			}
+                    <form method="POST">
+                        <div class="lignes">
+                            <!--<input type="hidden" name="counter" value="" />-->
+                            <div class="col">
+                                <input type="submit" class="like" name="button" value="">
+                                <div></div>
+                            </div>
+                            <input type="submit" class="plus" name="plus" value="">
+
+                            <input type="submit" name="reset" value="Reset">
+
+                        </div>
+                    </form>
+				</article>";}
+
 		?>
 		</div>	
 	</div>
