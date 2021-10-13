@@ -619,6 +619,11 @@ body
 	display: flex;
     flex-direction: column;
     align-items: flex-start;
+    border: 1px solid;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+
 }
 
 .postsList #timeline #newPost h1
