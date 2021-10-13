@@ -55,18 +55,18 @@ session_start();
     <div style='display: flex;
             flex-direction: column;
             align-items: center;'>
-        <ul style='display: flex;
-            flex-direction: column;
-            align-items: center;
+        <ul style='
             background-color: #495d63;
-            width: 20vw;
-            padding-bottom: 1vh'>
+            width: 35%;
+            padding: 0;
+            margin: 0;'>
             <div id ='titre' style='display: flex;
             flex-direction: column;
-            align-items: center;'>
+            align-items: center; width: 100%; '>
                         <div id='salutations' style='display: flex;
                         flex-direction: column;
-                        align-items: center;'>
+                        align-items: center;
+                        width: 100%;'>
                     <!-- Salutation du membre -->
                     <h3>Bienvenue dans vos parametres";
                     echo($_SESSION['name']);
