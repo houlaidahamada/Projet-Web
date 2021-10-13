@@ -105,7 +105,8 @@ if(!isset($_SESSION['suid']))
 				<p>$contenu</p>
 				<p>$keywords</p>
 			    </article>
-				</article>";
+				</article>"
+				include 'config/likes.php';
 			}
 		?>
 		</div>	
