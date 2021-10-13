@@ -38,7 +38,11 @@ session_start();
     </nav id="navigationMenu">
 </header>
 
-
+                if(isset($_SESSION['error'])
+                {
+                    $error = $_SESSION['error'];
+                    echo '<span>$error</span>'
+                }
                 <!-- Titre de la section-->
                 <?php
                 if(!isset($_SESSION['name'])){
