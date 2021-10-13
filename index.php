@@ -98,10 +98,12 @@ if(!isset($_SESSION['suid']))
 				$posts[] = $post;
 				$titre = $post['title'];
 				$contenu = $post['content'];
+                $keywords = $post['keywords'];
 				echo "<article id='newPost'>
 				<article>
 				<h1>$titre</h1>
 				<p>$contenu</p>
+				<p>$keywords</p>
 			    </article>
 				</article>";
 			}
