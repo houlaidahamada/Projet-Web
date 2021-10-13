@@ -21,7 +21,8 @@
                 if ($result_count > 0){
 
                     echo '<table class="search">';
-                    
+
+
                     while ($row = mysqli_fetch_assoc($query)){
                         echo '
                             <h1>'.$row['title'].'</h1>
