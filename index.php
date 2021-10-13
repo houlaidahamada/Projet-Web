@@ -2,9 +2,9 @@
 session_start();
 
 if(!isset($_SESSION['suid']))
- {
-	header('Location: pages/login.php');
- }
+{
+    header('Location: pages/login.php');
+}
 
 ?>
 <html lang="fr">
@@ -16,41 +16,41 @@ if(!isset($_SESSION['suid']))
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="style/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 
     <!-- ---- Script ---- -->
     <script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/index.js"></script>
-	<script src="js/navbar.js"></script>
-	
-	<!-- ---- Fonts ---- -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script src="js/index.js"></script>
+    <script src="js/navbar.js"></script>
+
+    <!-- ---- Fonts ---- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
 </head>
 <header id="navHeader">
-		<nav id="navigationMenu">
-			  <ul>
-				 <li class="logo">Vanestarre</li>
-                 <li class="items"><a href="index.php">Acceuil</a></li>
-				 <li class="items"><a href="pages/user.php"></a></li>
-				 <li class="items"><a href="config/deconnexion.php" >Deconnexion</a></li>
-				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
-			  </ul>
-              <ul>
-                  <li class="items"><a href="#">Recherche</a></li>
-              </ul>
-		</nav id="navigationMenu">
+    <nav id="navigationMenu">
+        <ul>
+            <li class="logo">Vanestarre</li>
+            <li class="items"><a href="index.php">Acceuil</a></li>
+            <li class="items"><a href="pages/user.php"></a></li>
+            <li class="items"><a href="config/deconnexion.php" >Deconnexion</a></li>
+            <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+        <ul>
+            <li class="items"><a href="#">Recherche</a></li>
+        </ul>
+    </nav id="navigationMenu">
 </header>
 
 
 <body id="bodyPrincipal">
 
-	<div id="contenu">
-		<div class="postsList">
-			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
-		</div>
-	</div>
+<div id="contenu">
+    <div class="postsList">
+        <button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
+    </div>
+</div>
 </body>
 </html>
