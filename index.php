@@ -89,7 +89,8 @@ if(!isset($_SESSION['suid']))
     ">
 		<?php include 'config/search-action.php'?>
 		<div id="timeline">
-		<?php 
+		<?php
+		    include 'config/likes.php';
 			require_once ('config/db_connect.php');
 
 			$sql = 'SELECT * FROM posts ORDER BY created_at;';
@@ -106,11 +107,10 @@ if(!isset($_SESSION['suid']))
 				<h1>$titre</h1>
 				<p>$contenu</p>
 				<p>β$keywords</p>
-			    </article>
-			    <input type='submit' class='like' name='button' value=''></input>
-			    </form>
-				</article>
-				";
+			    </article>".
+                likes() .
+				"</article>"
+				;
 				}
 			?>
 			 </div>
