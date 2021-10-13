@@ -43,5 +43,9 @@ if(!isset($_SESSION['suid']))
 </header>
 
 <body id="userBody">
+<?php
+    if isset($_SESSION['suid']){
+    echo "<h2>'$_SESSION['login']' . '[ ' . '$_SESSION['statut']' . ']'</h2>";
+}?>
 
 </body>
