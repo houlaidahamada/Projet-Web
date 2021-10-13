@@ -1,6 +1,6 @@
 <?php
     $newname = $_POST['name'];
-    if(isset($_POST['name']){
+    if(isset($_POST['name'])){
      header('Location: ../pages/user.php');
      $_SESSION['name'] = $newname;
     }
