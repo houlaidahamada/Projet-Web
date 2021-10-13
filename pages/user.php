@@ -37,12 +37,14 @@ session_start();
         </ul>
     </nav id="navigationMenu">
 </header>
-
+               <?php
                 if(isset($_SESSION['error'])
                 {
                     $error = $_SESSION['error'];
                     echo '<span>$error</span>'
                 }
+                ?>
+
                 <!-- Titre de la section-->
                 <?php
                 if(!isset($_SESSION['name'])){
