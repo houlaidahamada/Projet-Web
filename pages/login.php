@@ -55,7 +55,6 @@ session_start();
 					 }
                 ?>  
 				<div class="form-block">
-				
 						<strong><Label for="login" class="labelID">Identifiant </Label></strong>
 							<input type="email" placeholder="Email" name="login" required> </br>
 							

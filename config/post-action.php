@@ -12,9 +12,10 @@
 		 $title = $_GET['title'];
 		 $content = $_GET['content'];
 		 $keywords = $_GET['keywords'];
+		 $date = date("j, n, Y");
 
 
-		$query = "INSERT into posts(title, content, keywords) VALUES('$title', '$content', '$keywords')";
+		$query = "INSERT into posts(title, content, keywords,created_at) VALUES('$title', '$content', '$keywords','$date')";
 		if(!($dbResult = mysqli_query($dbLink, $query))){
 				header("Location: ../pages/posts.php");
 				$_SESSION['error'] = "Erreur lors de l'envoi du Post";

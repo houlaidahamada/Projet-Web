@@ -50,19 +50,22 @@ if(!isset($_SESSION['suid']))
 
 	<div id="contenu">
 	
-		<div class="postsList">
+		
 			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
 		
+		<div class="barreFlex" style="display: flex; flex-direction: row;">
 			<div class="Barre" style="display: none;">
-				<div class="form-outline">
-					<input type="search" id="searchBar" class="form-control">
-					<label class="form-label" for="searchBar">Recherche</label>
-				</div>
+				<form action="" method="GET" name="">
+					<div class="form-outline">
+						<input type="search" name="searchBar" id="searchBar" class="form-control" placholder="Recherche" autocomplete='on'>
+					</div>
 				
-				<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i>
-				</button>
+					<button type="submit" class="btn btn-primary" name="">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
 			</div>
+		</div>
 			
 			<?php
                     if(isset($_SESSION["error"])){
@@ -74,10 +77,35 @@ if(!isset($_SESSION['suid']))
 						 $success = $_SESSION["success"];
 						 echo "<span>$success</span>";
 					 }
-                ?>
-			
-		</div>
+                ?>	
 		
+	</div>
+	
+	<div class="postsList">
+		<div id="searchResult" style="
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+">
+		<?php include 'config/search-action.php'?> 
+</h2>
+		<div id="timeline">
+		<?php 
+			require_once ('config/db_connect.php');
+
+			$sql = 'SELECT * FROM posts ORDER BY created_at;';
+			$query = mysqli_query($dbLink, $sql);
+			while($post = mysqli_fetch_assoc($query)){
+				$posts[] = $post;
+				$titre = $post['title'];
+				$contenu = $post['content'];
+				echo "<article id='newPost'>
+				<h1>$titre</h1>
+				<p>$contenu</p>
+				</article>";
+			}
+		?>
+		</div>	
 	</div>
 	<?php
 		unset($_SESSION["error"]);
