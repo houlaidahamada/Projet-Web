@@ -64,7 +64,7 @@ session_start();
             <div id ='titre' style='display: flex;
             flex-direction: column;
             align-items: center;'>
-                        div id='salutations' style='display: flex;
+                        <div id='salutations' style='display: flex;
                         flex-direction: column;
                         align-items: center;'>
                     <!-- Salutation du membre -->
