@@ -90,7 +90,7 @@ session_start();
                     <br>
                     <br>
                     <label for='name'>Changer de pseudo :</label>
-                    <form action='../config/rename.php'>
+                    <form method='POST' action='../config/rename.php'>
                         <input type='text' id='name' name='name' required
                                  minlength='4' maxlength='14' size='14'>
                         </input>
