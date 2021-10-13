@@ -86,7 +86,7 @@ if(!isset($_SESSION['suid']))
     display: flex;
     flex-direction: column;
     width: 50%;
-">
+    ">
 		<?php include 'config/search-action.php'?>
 		<div id="timeline">
 		<?php 
