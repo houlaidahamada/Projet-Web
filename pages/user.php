@@ -35,7 +35,7 @@ if(!isset($_SESSION['suid']))
         				 <li class="logo">Vanestarre</li>
                          <li class="items"><a href="../index.php">Accueil</a></li>
         				 <li class="items"><a href="pages/user.php">Utilisateur</a></li>
-        				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
+        				 <li class="items"><a href="../config/deconnexion.php">Deconnexion</a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
                          <li class="items"><a href="#">Recherche</a></li>
                       </ul>
@@ -44,8 +44,11 @@ if(!isset($_SESSION['suid']))
 
 <body id="userBody">
 <?php
-    if (isset($_SESSION['suid'])){
-    echo "<h2>'$_SESSION['login']' . '[ ' . '$_SESSION['statut']' . ']'</h2>";
+    if(isset($_SESSION['suid'])){
+	$username = $_SESSION['login'];
+	$statut = $_SESSION['statut'];
+	
+    echo "<h2> $username [$statut] </h2>";
 }?>
 
 </body>
