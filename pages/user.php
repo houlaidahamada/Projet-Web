@@ -37,13 +37,7 @@ session_start();
         </ul>
     </nav id="navigationMenu">
 </header>
-               <?php
-                if(isset($_SESSION['error']))
-                {
-                    $error = $_SESSION['error'];
-                    echo '<span>$error</span>';
-                }
-                ?>
+
 
                 <!-- Titre de la section-->
                 <?php
@@ -58,6 +52,7 @@ session_start();
 
                     echo "
                         <body id='page-user'>
+
     <div style='display: flex;
             flex-direction: column;
             align-items: center;'>
@@ -122,6 +117,13 @@ session_start();
     
     
         </div>";
+
+                    if(isset($_SESSION['error']))
+                    {
+                        $error = $_SESSION['error'];
+                        echo '<span>$error</span>';
+                    }
+
                 }
                 ?>
 
