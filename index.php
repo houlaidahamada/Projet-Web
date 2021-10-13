@@ -38,7 +38,7 @@ session_start();
         				    }
         				    else
         				    {
-        				        echo "<button id='signLink'><a href='pages/sign.php'>Inscription</a></button>";
+        				        echo "<li><a href='pages/sign.php'>Inscription</a></li>";
         				    }
         				 ?>
         				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
