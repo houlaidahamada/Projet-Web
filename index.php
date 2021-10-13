@@ -38,7 +38,7 @@ if(!isset($_SESSION['suid']))
         				 <li class="logo">Vanestarre</li>
                          <li class="items"><a href="index.php">Accueil</a></li>
                          <?php
-                            if(($_SESSION['statut'] == 'admin') && ($_SESSION['superuser'])){
+                            if(($_SESSION['statut'] == 'admin') || ($_SESSION['superuser'])){
         				        echo "<li class='items'><a href='pages/user.php'>Utilisateur</a></li>";
         				    }
         				 ?>
