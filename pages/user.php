@@ -33,7 +33,7 @@ if(!isset($_SESSION['suid']))
 		<nav id="navigationMenu">
         			  <ul>
         				 <li class="logo">Vanestarre</li>
-                         <li class="items"><a href="index.php">Accueil</a></li>
+                         <li class="items"><a href="../index.php">Accueil</a></li>
         				 <li class="items"><a href="pages/user.php">Utilisateur</a></li>
         				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
