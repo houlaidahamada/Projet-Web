@@ -94,7 +94,8 @@ nav ul li.btn.hide i:before{
 
 body
 {
-	background-color: #E8CCD7;
+	/*background-color: #E8CCD7;*/
+    background: url("ressources/img/Fond.png");
 }
 
 #postCreation
