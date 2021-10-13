@@ -51,7 +51,7 @@ if(!isset($_SESSION['suid']))
 	<div id="contenu">
 	    <?php
 		 if(isset($_SESSION['statut'] == 'admin')){
-			echo '<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>'
+			echo "<button id='postCreation'><a href='pages/posts.php'>Nouveau Post</a></button>"
 			}
 		?>
 		
