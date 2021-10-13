@@ -99,30 +99,23 @@ if(!isset($_SESSION['suid']))
 				$titre = $post['title'];
 				$contenu = $post['content'];
                 $keywords = $post['keywords'];
-				echo "<article id='newPost'>
+				echo "
+				<form method='POST' action=''>
+				<article id='newPost'>
 				<article>
 				<h1>$titre</h1>
 				<p>$contenu</p>
-				<p>$keywords</p>
+				<p>β$keywords</p>
 			    </article>
-                    <form method="POST">
-                        <div class="lignes">
-                            <!--<input type="hidden" name="counter" value="" />-->
-                            <div class="col">
-                                <input type="submit" class="like" name="button" value="">
-                                <div></div>
-                            </div>
-                            <input type="submit" class="plus" name="plus" value="">
+			    <input type='submit' class='like' name='button' value=''></input>
+			    </form>
+				</article>
+				";
+				}
+			?>
+			 </div>
 
-                            <input type="submit" name="reset" value="Reset">
 
-                        </div>
-                    </form>
-				</article>";}
-
-		?>
-		</div>	
-	</div>
 	<?php
 		unset($_SESSION["error"]);
 		unset($_SESSION["success"]);

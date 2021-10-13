@@ -160,5 +160,3 @@ if($_SESSION['emoji'] == 0){
 
             </div>
         </form>
-
-        <?php }?>

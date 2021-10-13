@@ -26,7 +26,7 @@
                         echo '
                             <h1>'.$row['title'].'</h1>
                             <p>'.$row['content'].'</p>
-                            <i>'.$row['keywords'].'</i>';
+                            <i>'.'β'.$row['keywords'].'</i>';
                     }
                     
                     echo '</article>';
