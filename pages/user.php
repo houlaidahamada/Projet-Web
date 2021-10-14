@@ -9,7 +9,10 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>VANESTARRE</title>
+    <title>VANESGRAM</title>
+
+    <!-- ---- Favicon ---- -->
+    <link rel="icon" href="../ressources/favicon_io/favicon.ico"/>
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">

@@ -7,8 +7,11 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>VANESTARRE</title>
-    <meta name="description" content="Réseau social de la star du net VANESTARE">
+    <title>VANESGRAM</title>
+    <meta name="description" content="Réseau social de la star du net VANESTARRE">
+
+    <!-- ---- Favicon ---- -->
+    <link rel="icon" href="ressources/favicon_io/favicon.ico"/>
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="style/style.css">
@@ -32,7 +35,7 @@ session_start();
 <header id="navHeader">
 		<nav id="navigationMenu">
         			  <ul>
-        				 <li class="logo">Vanestarre</li>
+        				 <li class="logo">Vanesgram</li>
                          <li class="items"><a href="index.php">Accueil</a></li>
                          <?php
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser')){
@@ -118,6 +121,7 @@ session_start();
                             $keywords = $post['keywords'];
                             $image_url = $post['image_url'];
 
+
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
             						echo "
@@ -126,8 +130,11 @@ session_start();
             								<article>
             								<h1>$titre</h1>
             								<p>$contenu</p>
-            								<p>β$keywords</p>
-            								<p><img src='/images/$image_url'></p>
+            								<p>β$keywords</p>";
+            								if($image_url != NULL){
+            								 echo "<p><img src='/images/$image_url'></p>";
+            								 }
+            								 echo"
             								</form>
             								</article>".
             								likes().
@@ -140,7 +147,11 @@ session_start();
                                 <article>
                                 <h1>$titre</h1>
                                 <p>$contenu</p>
-                                <p>β$keywords</p>
+                                <p>β$keywords</p>";
+                                if($image_url != NULL){
+                                   echo "<p><img src='/images/$image_url'></p>";
+                                   }
+                                   echo "
                                 </article>
                                 </article>"
                                 ;

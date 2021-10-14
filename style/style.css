@@ -21,6 +21,7 @@ nav ul{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
 }
 nav ul li{
   padding: 15px 0;
@@ -43,6 +44,8 @@ nav ul li.logo{
   user-select: none;
   text-transform: uppercase;
 }
+
+
 
 nav ul li a{
   color: white;
@@ -715,6 +718,9 @@ body:before {
     display: flex;
     flex-direction: row;
     text-align: center;
+}
+h3{
+    margin: 20px;
 }
 
 .col{
