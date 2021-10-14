@@ -23,7 +23,7 @@
 <div class="centrePost">	
 	<div class="boitePost">
 		<h2>Nouveau Post</h2>
-		<form method="GET" id="postForm" action="../config/post-action.php" enctype="multipart/form-data">
+		<form method="POST" id="postForm" action="../config/post-action.php" enctype="multipart/form-data">
 				<?php
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
@@ -43,7 +43,12 @@
 				<textarea name="content" placeholder="Taille maximale de 50 caractères." required maxlength='50'></textarea>
                 <input type="text" id="keywords" name="keywords" placeholder="Mots cléfs" required>
                 <br>
-                <?php if (isset($_GET['error'])) echo $_GET['error']; ?>
+                <?php
+                if (isset($_SESSION['error'])) {
+                    $error = $_SESSION['error'];
+                    echo $error;
+                }
+                ?>
                 <br>
                 <input type ="file" name="my_image" style="position: relative; top: 20%;">
 
