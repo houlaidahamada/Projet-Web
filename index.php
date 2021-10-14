@@ -119,9 +119,8 @@ session_start();
             				$titre = $post['title'];
             				$contenu = $post['content'];
                             $keywords = $post['keywords'];
-                            if($$post['image_url'] != NULL){
                             $image_url = $post['image_url'];
-                            }
+
 
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
@@ -131,8 +130,11 @@ session_start();
             								<article>
             								<h1>$titre</h1>
             								<p>$contenu</p>
-            								<p>β$keywords</p>
-            								<p><img src='/images/$image_url'></p>
+            								<p>β$keywords</p>"
+            								if($image_url != NULL){
+            								 echo "<p><img src='/images/$image_url'></p>";
+            								 }
+            								 echo"
             								</form>
             								</article>".
             								likes().
@@ -145,8 +147,11 @@ session_start();
                                 <article>
                                 <h1>$titre</h1>
                                 <p>$contenu</p>
-                                <p>β$keywords</p>
-                                <p><img src='/images/$image_url'></p>
+                                <p>β$keywords</p>"
+                                if($image_url != NULL){
+                                   echo "<p><img src='/images/$image_url'></p>";
+                                   }
+                                   echo "
                                 </article>
                                 </article>"
                                 ;
