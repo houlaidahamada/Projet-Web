@@ -62,22 +62,7 @@
 <button name="retour" id="retourPost"><a href="../index.php">Annuler</</button>
 
 
-<nav>
-    <?php include ('../config/pagination.php'); ?>
-    <ul class="pagination">
-        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
-            <a href="./?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
-        </li>
-        <?php for($page = 1; $page <= $nb_page; $page++): ?>
-            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
-                <a href="./?page=<?= $page ?>" class="page-link"><?= $page ?></a>
-            </li>
-        <?php endfor ?>
-        <li class="page-item <?= ($currentPage == $nb_page) ? "disabled" : "" ?>">
-            <a href="./?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
-        </li>
-    </ul>
-</nav>
+
 
 
 </body>
