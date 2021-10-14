@@ -537,7 +537,7 @@ body:before {
 
 .boitePost{
     display: flex;
-    height: 178px;
+    height: 35%;
     width: 370px;
     align-content: center;
     justify-content: center;

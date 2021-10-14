@@ -45,7 +45,7 @@
                 <br>
                 <?php if (isset($_GET['error'])) echo $_GET['error']; ?>
                 <br>
-                <input type ="file" name="my_image" style="{position: relative; top: 20%;}">
+                <input type ="file" name="my_image" style="position: relative; top: 20%;">
 
 
                 <button name="new_post">Ajouter le Post</button>
