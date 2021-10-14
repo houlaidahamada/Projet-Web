@@ -45,7 +45,7 @@ session_start();
         				 ?>
         				 <li class="items"><a href="config/deconnexion.php">
 						<?php
-						 if(($_SESSION['statut'] != 'admin') || ($_SESSION['statut'] != 'superuser')){
+						 if(!isset($_SESSION['statut'])){
 							echo 'Connexion';
 						 }
 						 if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser')){
