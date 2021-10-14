@@ -722,6 +722,7 @@ body:before {
 h3{
     margin: 20px;
 }
+
 .col{
     display: flex;
     flex-direction: column;
