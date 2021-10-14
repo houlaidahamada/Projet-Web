@@ -294,6 +294,11 @@ body:before {
 	right: 70%;
 }
 
+#loginForm .form-block #loginId
+{
+
+}
+
 #loginForm .form-block .labelPass
 {
 	position: relative;

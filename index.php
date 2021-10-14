@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 <!doctype html>
 <html lang="fr">
@@ -21,6 +20,7 @@ session_start();
 	<script src="js/index.js"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/searchbar.js"></script>
+	<script src="js/hideEmoji.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,10 +40,19 @@ session_start();
         				    }
         				    else
         				    {
-        				        echo "<li><a href='pages/sign.php'>Inscription</a></li>";
+        				        echo "<li class='items'><a href='pages/sign.php'>Inscription</a></li>";
         				    }
         				 ?>
-        				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
+        				 <li class="items"><a href="config/deconnexion.php">
+						<?php
+						 if(($_SESSION['statut'] != 'admin') || ($_SESSION['statut'] != 'superuser')){
+							echo 'Connexion';
+						 }
+						 else{
+							 echo 'Deconnexion';
+						 }
+						 ?>
+						 </a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
                          <li class="items"><a href="#" onclick="afficherBarre()">Recherche</a></li>
                       </ul>
@@ -107,15 +116,17 @@ session_start();
             				$titre = $post['title'];
             				$contenu = $post['content'];
                             $keywords = $post['keywords'];
+
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
             						echo "
-            								<form method='POST' action=''>
+            								<form method='POST' action='config/delete.php'>
             								<article id='newPost'>
             								<article>
             								<h1>$titre</h1>
             								<p>$contenu</p>
             								<p>β$keywords</p>
+            								</form>
             								</article>".
             								likes().
             								"</article>";

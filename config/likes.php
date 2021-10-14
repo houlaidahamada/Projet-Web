@@ -154,7 +154,6 @@ if($_SESSION['emoji'] == 0){
                 <?php
                 }
                 ?>
-                <input type="submit" name="reset" value="Reset" />
 
             </div>
         </form>
