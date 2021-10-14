@@ -125,7 +125,7 @@ session_start();
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
             						echo "
-            								<form method='POST' action='config/delete.php'>
+            								<form method='POST' action=''>
             								<article id='newPost'>
             								<article>
             								<h1>$titre</h1>
