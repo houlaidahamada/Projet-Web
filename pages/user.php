@@ -9,7 +9,10 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>VANESTARRE</title>
+    <title>VANESGRAM</title>
+
+    <!-- ---- Favicon ---- -->
+    <link rel="icon" href="../ressources/favicon_io/favicon.ico"/>
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">
@@ -72,7 +75,8 @@ session_start();
                         <div id='salutations' style='display: flex;
                         flex-direction: column;
                         align-items: center;
-                        width: 100%;'>
+                        width: 100%;
+                        font-family: Montserrat;'>
                     <!-- Salutation du membre -->
                     <h3>Bienvenue dans vos parametres ";
                     echo($_SESSION['name']);

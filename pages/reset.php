@@ -7,6 +7,9 @@ session_start();
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Reinitialisation du mot de passe</title>
 
+    <!-- ---- Favicon ---- -->
+    <link rel="icon" href="../ressources/favicon_io/favicon.ico"/>
+
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="../style/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
