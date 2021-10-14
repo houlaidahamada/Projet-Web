@@ -130,7 +130,7 @@ session_start();
             								<article>
             								<h1>$titre</h1>
             								<p>$contenu</p>
-            								<p>β$keywords</p>"
+            								<p>β$keywords</p>";
             								if($image_url != NULL){
             								 echo "<p><img src='/images/$image_url'></p>";
             								 }
@@ -147,7 +147,7 @@ session_start();
                                 <article>
                                 <h1>$titre</h1>
                                 <p>$contenu</p>
-                                <p>β$keywords</p>"
+                                <p>β$keywords</p>";
                                 if($image_url != NULL){
                                    echo "<p><img src='/images/$image_url'></p>";
                                    }
