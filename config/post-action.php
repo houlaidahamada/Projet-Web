@@ -33,11 +33,12 @@
 
 				 if (in_array($file_ext_lc, $allowed_ext)){
 					 $new_img_name = uniqid("IMG-", true).'.'.$file_ext_lc;
-					 $img_upload_path = 'images/'.$new_img_name;
+					 $img_upload_path = '../images/'.$new_img_name;
 					 move_uploaded_file($tmp_name, $img_upload_path);
 
 					 $sql = "INSERT INTO posts(image_url) VALUES('$new_img_name')";
 					 mysqli_query($dbLink, $sql);
+					 header("Location: ../index.php");
 
 				 }
 				 else
