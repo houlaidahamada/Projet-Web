@@ -48,7 +48,7 @@ session_start();
 						 if(($_SESSION['statut'] != 'admin') || ($_SESSION['statut'] != 'superuser')){
 							echo 'Connexion';
 						 }
-						 else{
+						 if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'){
 							 echo 'Deconnexion';
 						 }
 						 ?>
