@@ -269,13 +269,18 @@ body:before {
 
 #loginForm .form-block {
     height: 300px;
-    background-color: #ADD8E6;
     width: 300px;
-    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgba( 97, 194, 214, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 #loginForm .form-block label
@@ -313,6 +318,7 @@ body:before {
     margin-left: 48%;
     position: relative;
     bottom: 7%;
+    cursor: pointer;
 }
 
 #loginForm .form-block input:focus
@@ -330,6 +336,7 @@ body:before {
 	color:black;
     font-weight: bold;
 	height: 100%;
+    cursor: pointer;
 }
 
 #loginForm .form-block #loginButton:focus

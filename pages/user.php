@@ -57,13 +57,18 @@ session_start();
             flex-direction: column;
             align-items: center;'>
         <ul style='
-            background-color: #495d63;
             width: 35%;
             padding: 0;
             margin: 0;'>
             <div id ='titre' style='display: flex;
             flex-direction: column;
-            align-items: center; width: 100%; '>
+            align-items: center; width: 100%;
+             background: rgba( 97, 194, 214, 0.4 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 4px );
+                -webkit-backdrop-filter: blur( 4px );
+                border-radius: 10px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );'>
                         <div id='salutations' style='display: flex;
                         flex-direction: column;
                         align-items: center;

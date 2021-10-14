@@ -2,12 +2,14 @@
 session_start();
 
 ?>
+<!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>VANESTARRE</title>
+    <meta name="description" content="Réseau social de la star du net VANESTARE">
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="style/style.css">
