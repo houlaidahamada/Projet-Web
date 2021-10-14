@@ -146,6 +146,7 @@ session_start();
                                 <h1>$titre</h1>
                                 <p>$contenu</p>
                                 <p>β$keywords</p>
+                                <p><img src='/images/$image_url'></p>
                                 </article>
                                 </article>"
                                 ;
