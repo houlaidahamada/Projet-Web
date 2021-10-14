@@ -45,7 +45,7 @@
                 <br>
                 <?php if (isset($_GET['error'])) echo $_GET['error']; ?>
                 <br>
-                <input type ="file" name=my_image">
+                <input type ="file" name="my_image" style="position: relative; top: 20%;">
 
 
                 <button name="new_post">Ajouter le Post</button>
@@ -56,22 +56,6 @@
 		?>
 	</div>
 
-    <div class="Posts_published">
-        <h2>Post</h2>
-        <?php
-        require_once ('../config/db_connect.php');
-
-        $sql = 'SELECT title, content FROM posts ORDER BY created_at;';
-        $query = mysqli_query($dbLink, $sql);
-        $posts = mysqli_fetch_assoc($query);
-
-        foreach($posts as $post)
-        {
-            echo $post['title'];
-            echo $post['content'];
-        }
-        ?>
-    </div>
 </div>
 
 
