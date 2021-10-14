@@ -73,7 +73,7 @@ session_start();
                         flex-direction: column;
                         align-items: center;
                         width: 100%;
-                        font-family: 'Montserrat',sans-serif;'>
+                        font-family: 'Montserrat',sans-serif;>
                     <!-- Salutation du membre -->
                     <h3>Bienvenue dans vos parametres ";
                     echo($_SESSION['name']);
