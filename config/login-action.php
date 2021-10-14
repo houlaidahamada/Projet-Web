@@ -11,35 +11,57 @@
 ?>
 
 <?php
-	session_start();
-	$query = "SELECT * FROM user WHERE Email='$user' AND Mdp='$pwd '";
-		 if(!($dbResult = mysqli_query($dbLink, $query))){
-			 echo 'Erreur dans requête<br />'; 
-			 // Affiche le type d'erreur. echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-			 
-			 echo 'Requête : ' . $query . '<br/>';
-			 // Affiche la requête envoyée.
-			 exit();
-	}
-		else{
-			$rows = mysqli_num_rows($dbResult);
-				if($rows==1)
-				{
-					$_SESSION['login'] = $user;
-					$_SESSION['password'] = $pwd;
-					$_SESSION['suid'] = session_id();
-					header("Location: ../index.php");
-				}
-				else
-				{
-					header("Location: ../pages/login.php");
-					$_SESSION['error'] = $erreur;
+			session_start();
+			$admincheck = "SELECT * FROM user WHERE Email='$user' AND Mdp='$pwd' AND type='1'";
+			$superusercheck = "SELECT * FROM user WHERE Email='$user' AND Mdp='$pwd' AND type='2'";
+			$usercheck = "SELECT * FROM user WHERE Email='$user' AND Mdp='$pwd' AND type='3'";
+
+			if($Result = mysqli_query($dbLink, $admincheck)){
+					$rows2 = mysqli_num_rows($Result);
+					if($rows2==1){
+						$_SESSION['statut'] = 'admin';
+						$_SESSION['login'] = $user;
+						$_SESSION['password'] = $pwd;
+						$_SESSION['suid'] = session_id();
+						header("Location: ../index.php");
+					}
 			}
-					
-	}
-	
-	
-	
-	
-		
+			else
+			{
+				header("Location: ../pages/login.php");
+				$_SESSION['error'] = mysqli_error($dbLink);
+			}
+			
+			if($Result = mysqli_query($dbLink,$superusercheck)){
+				$rows2 = mysqli_num_rows($Result);
+					if($rows2==1){
+						$_SESSION['statut'] = 'superuser';
+						$_SESSION['login'] = $user;
+						$_SESSION['password'] = $pwd;
+						$_SESSION['suid'] = session_id();
+						header("Location: ../index.php");
+					}
+				}
+			else
+			{
+				header("Location: ../pages/login.php");
+				$_SESSION['error'] = mysqli_error($dbLink);
+			}
+			
+			if($Result = mysqli_query($dbLink,$usercheck)){
+					$rows2 = mysqli_num_rows($Result);
+					if($rows2==1){
+						$_SESSION['statut'] = 'user';
+						$_SESSION['login'] = $user;
+						$_SESSION['password'] = $pwd;
+						$_SESSION['suid'] = session_id();
+						header("Location: ../index.php");
+					}
+				}
+			else
+			{
+				header("Location: ../pages/login.php");
+				$_SESSION['error'] = mysqli_error($dbLink);
+			}
+
 ?>

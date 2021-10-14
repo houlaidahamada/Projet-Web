@@ -1,18 +1,14 @@
 <?php
 session_start();
-
-if(!isset($_SESSION['suid']))
- {
-	header('Location: pages/login.php');
- }
-
 ?>
+<!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>VANESTARRE</title>
+    <meta name="description" content="Réseau social de la star du net VANESTARE">
 
     <!-- ---- CSS ---- -->
     <link rel="stylesheet" href="style/style.css">
@@ -24,6 +20,7 @@ if(!isset($_SESSION['suid']))
 	<script src="js/index.js"></script>
 	<script src="js/navbar.js"></script>
 	<script src="js/searchbar.js"></script>
+	<script src="js/hideEmoji.js"></script>
 	
 	<!-- ---- Fonts ---- -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +34,25 @@ if(!isset($_SESSION['suid']))
         			  <ul>
         				 <li class="logo">Vanestarre</li>
                          <li class="items"><a href="index.php">Accueil</a></li>
-        				 <li class="items"><a href="pages/user.php">Utilisateur</a></li>
-        				 <li class="items"><a href="config/deconnexion.php">Deconnexion</a></li>
+                         <?php
+                            if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser')){
+        				        echo "<li class='items'><a href='pages/user.php'>Utilisateur</a></li>";
+        				    }
+        				    else
+        				    {
+        				        echo "<li class='items'><a href='pages/sign.php'>Inscription</a></li>";
+        				    }
+        				 ?>
+        				 <li class="items"><a href="config/deconnexion.php">
+						<?php
+						 if(!isset($_SESSION['statut'])){
+							echo 'Connexion';
+						 }
+						 if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser')){
+							 echo 'Deconnexion';
+						 }
+						 ?>
+						 </a></li>
         				 <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
                          <li class="items"><a href="#" onclick="afficherBarre()">Recherche</a></li>
                       </ul>
@@ -49,20 +63,25 @@ if(!isset($_SESSION['suid']))
 <body id="bodyPrincipal">
 
 	<div id="contenu">
-	
-		<div class="postsList">
-			<button id="postCreation"><a href="pages/posts.php">Nouveau Post</a></button>
+	    <?php
+		 if($_SESSION['statut'] == 'admin'){
+			echo "<button id='postCreation'><a href='pages/posts.php'>Nouveau Post</a></button>";
+			}
+		?>
 		
-			<div class="Barre" style="display: none;">
-				<div class="form-outline">
-					<input type="search" id="searchBar" class="form-control">
-					<label class="form-label" for="searchBar">Recherche</label>
-				</div>
+		<div class="barreFlex" style="display: flex; flex-direction: row;">
+			<div class="Barre" style="display: none; margin-top: 10px;">
+				<form action="" method="GET" name="">
+					<div class="form-outline">
+						<input type="search" name="searchBar" id="searchBar" class="form-control" placholder="Recherche" autocomplete='on'>
+					</div>
 				
-				<button type="button" class="btn btn-primary">
-					<i class="fas fa-search"></i>
-				</button>
+					<button type="submit" class="btn btn-primary" name="">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
 			</div>
+		</div>
 			
 			<?php
                     if(isset($_SESSION["error"])){
@@ -74,11 +93,61 @@ if(!isset($_SESSION['suid']))
 						 $success = $_SESSION["success"];
 						 echo "<span>$success</span>";
 					 }
-                ?>
-			
-		</div>
+                ?>	
 		
 	</div>
+	
+	<div class="postsList">
+		<div id="searchResult" style="
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    ">
+		<?php include 'config/search-action.php'?>
+		<div id="timeline">
+		<?php
+		    include 'config/likes.php';
+			require_once ('config/db_connect.php');
+
+			$sql = 'SELECT * FROM posts ORDER BY created_at;';
+			$query = mysqli_query($dbLink, $sql);
+			while($post = mysqli_fetch_assoc($query)){
+            				$posts[] = $post;
+            				$titre = $post['title'];
+            				$contenu = $post['content'];
+                            $keywords = $post['keywords'];
+
+                            if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
+            					{
+            						echo "
+            								<form method='POST' action='config/delete.php'>
+            								<article id='newPost'>
+            								<article>
+            								<h1>$titre</h1>
+            								<p>$contenu</p>
+            								<p>β$keywords</p>
+            								</form>
+            								</article>".
+            								likes().
+            								"</article>";
+            					}
+            					else{
+                                echo "
+                                <form method='POST' action=''>
+                                <article id='newPost'>
+                                <article>
+                                <h1>$titre</h1>
+                                <p>$contenu</p>
+                                <p>β$keywords</p>
+                                </article>
+                                </article>"
+                                ;
+                                }
+            				}
+			?>
+			 </div>
+
+
 	<?php
 		unset($_SESSION["error"]);
 		unset($_SESSION["success"]);

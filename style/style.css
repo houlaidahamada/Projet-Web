@@ -78,25 +78,80 @@ nav ul li.btn.hide i:before{
 }
 
 /*   Page Utilisateur    */
-#userBody
+#page-user
 {
     margin: 0;
     padding: 0;
 }
 
+/* Slider User */
+.slidecontainer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7; /
+-webkit-transition: .2s;
+    transition: opacity .2s;
+
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1;
+}
+
+/* Index */
+.Barre {
+    display: flex;
+    flex-direction: row;
+}
+
 /* corps de la page */
 
-body
-{
-	background-color: #E8CCD7;
+body {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    height: 100%;
+    margin:0;
+    padding:0;
+    background-size: 100% ;
+    width:100%;
+    color:black;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    height: 100%; width: 100%;
+
+    background: linear-gradient(
+            rgba(225, 225, 225, 0.6),
+            rgba(225, 225, 225, 0.6)
+    ),url(../ressources/img/Fond.png);
+    background-size: cover;
+    z-index: -1; /* Keep the background behind the content /
+    -webkit-filter: blur(8px);
+    -webkit-background-size: cover; / pour Chrome et Safari /
+    -moz-background-size: cover; / pour Firefox /
+    -o-background-size: cover; / pour Opera /
+    background-size: cover; / version standardisée */
 }
 
 #postCreation
 {
-	width: 99%;
+	width: 10%;
     border-radius: 2px;
     border: none;
-    height: 100%;
+    height: 50%;
     font-weight: 700;
 }
 
@@ -214,13 +269,18 @@ body
 
 #loginForm .form-block {
     height: 300px;
-    background-color: #ADD8E6;
     width: 300px;
-    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgba( 97, 194, 214, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 #loginForm .form-block label
@@ -232,6 +292,12 @@ body
 {
 	position: relative;
 	right: 70%;
+}
+
+#loginForm .form-block #loginId
+{
+    position: relative;
+    right: 160%;
 }
 
 #loginForm .form-block .labelPass
@@ -258,6 +324,7 @@ body
     margin-left: 48%;
     position: relative;
     bottom: 7%;
+    cursor: pointer;
 }
 
 #loginForm .form-block input:focus
@@ -275,6 +342,7 @@ body
 	color:black;
     font-weight: bold;
 	height: 100%;
+    cursor: pointer;
 }
 
 #loginForm .form-block #loginButton:focus
@@ -350,6 +418,7 @@ body
     border: none;
     height: 25px;
     border-radius: 2px;
+	margin-top: 3%;
 	color:black;
 	background-color: #ADD8E6;
 	border-bottom: solid black 1px;
@@ -444,6 +513,7 @@ body
 	text-decoration: none;
     color: black;
     font-weight: 600;
+    margin-inline: 1%;
 }
 
 /*	Posts	*/
@@ -585,6 +655,9 @@ body
 {
     display: flex;
     justify-content: center;
+	height: 10%;
+	flex-direction: column;
+	align-items: center;
 }
 
 #contenu a
@@ -594,6 +667,145 @@ body
 }
 
 
+
+/* Posts List */
+.postsList
+{
+	display:flex;
+	justify-content: center;
+}
+
+.postsList #timeline
+{
+	display:flex;
+	flex-direction:column;
+}
+
+.postsList #timeline #newPost
+{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+
+}
+
+#newPost{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 10px;
+
+}
+
+.postsList #timeline #newPost h1
+{
+	align-self: flex-start;
+}
+
+/* Likes */
+
+.lignes{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input.like
+{
+    background:url(../ressources/img/coeur.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.plus
+{
+    background:url(../ressources/img/plus.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.moins
+{
+    background:url(../ressources/img/moins.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.lol
+{
+    background:url(../ressources/img/lol.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.waw
+{
+    background:url(../ressources/img/waw.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.love
+{
+    background:url(../ressources/img/love.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.colere
+{
+    background:url(../ressources/img/colere.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+input.cool
+{
+    background:url(../ressources/img/cool.png);
+    border:none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+#name{
+    margin-bottom: 10px;
+}
 
 
 

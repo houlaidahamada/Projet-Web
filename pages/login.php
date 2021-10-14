@@ -55,8 +55,7 @@ session_start();
 					 }
                 ?>  
 				<div class="form-block">
-				
-						<strong><Label for="login" class="labelID">Identifiant </Label></strong>
+						<strong><Label for="login" id="loginID" class="labelID">Email </Label></strong>
 							<input type="email" placeholder="Email" name="login" required> </br>
 							
 						<strong><Label for="mdp" class="labelPass">Mot de passe </Label></strong>
@@ -74,7 +73,10 @@ session_start();
 				unset($_SESSION["success"]);
 			?>
 		</div>
-		<div id="lienBonus"><a href="nouveaupass.php">Mot de passe oublié ?</a></div>
+		<div id="lienBonus">
+            <a href="nouveaupass.php">Mot de passe oublié ?</a>
+            <a href="../index.php"> Accès Visiteur</a>
+		</div>
 		
 		
 
