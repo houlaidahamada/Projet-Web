@@ -119,7 +119,9 @@ session_start();
             				$titre = $post['title'];
             				$contenu = $post['content'];
                             $keywords = $post['keywords'];
+                            if($$post['image_url'] != NULL){
                             $image_url = $post['image_url'];
+                            }
 
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
