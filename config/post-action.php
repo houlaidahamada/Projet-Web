@@ -14,6 +14,45 @@
 		 $keywords = $_GET['keywords'];
 		 $date = date("j, n, Y");
 
+		 $img_name = $_FILES['my_image']['name'];
+		 $img_size = $_FILES['my_image']['size'];
+		 $tmp_name = $_FILES['my_image']['tmp_name'];
+		 $error = $_FILES['my_image']['error'];
+
+		 if ($error === 0){
+			 if ($img_size > 10485760){
+				 $err = "Image trop volumineuse";
+				 header("Location = index.php?error=$err");
+			 }
+			 else
+			 {
+				 $file_ext = pathinfo($img_name, PATHINFO_EXTENSION);
+				 $file_ext_lc = strtolower($file_ext);
+
+				 $allowed_ext = array("jpg", "jpeg", "png");
+
+				 if (in_array($file_ext_lc, $allowed_ext)){
+					 $new_img_name = uniqid("IMG-", true).'.'.$file_ext_lc;
+					 $img_upload_path = '/images/'.$new_img_name;
+					 move_uploaded_file($tmp_name, $img_upload_path);
+
+					 $sql = "INSERT INTO posts(image_url) VALUES('$new_img_name')";
+					 mysqli_query($dbLink, $sql);
+
+				 }
+				 else
+				 {
+					 $err = "Type de fichier non pris en charge";
+					 header("Location = index.php?error=$err");
+				 }
+			 }
+		 }
+		 else
+		 {
+			 $err = "Une erreur est survenue";
+			 header("Location = index.php?error=$err");
+		 }
+
 
 		$query = "INSERT into posts(title, content, keywords,created_at) VALUES('$title', '$content', '$keywords','$date')";
 		if(!($dbResult = mysqli_query($dbLink, $query))){

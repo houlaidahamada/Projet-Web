@@ -119,6 +119,7 @@ session_start();
             				$titre = $post['title'];
             				$contenu = $post['content'];
                             $keywords = $post['keywords'];
+                            $image_url = $post['image_url'];
 
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
@@ -129,6 +130,7 @@ session_start();
             								<h1>$titre</h1>
             								<p>$contenu</p>
             								<p>β$keywords</p>
+            								<p><img src='/images/$image_url'></p>
             								</form>
             								</article>".
             								likes().

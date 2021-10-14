@@ -23,7 +23,7 @@
 <div class="centrePost">	
 	<div class="boitePost">
 		<h2>Nouveau Post</h2>
-		<form method="GET" id="postForm" action="../config/post-action.php">
+		<form method="GET" id="postForm" action="../config/post-action.php" enctype="multipart/form-data">
 				<?php
                     if(isset($_SESSION["error"])){
                         $error = $_SESSION["error"];
@@ -42,16 +42,58 @@
 				<input type="text" name="title" placeholder="Titre Post" required>
 				<textarea name="content" placeholder="Taille maximale de 50 caractères." required maxlength='50'></textarea>
                 <input type="text" id="keywords" name="keywords" placeholder="Mots cléfs" required>
-				<button name="new_post">Ajouter le Post</button>
+                <br>
+                <?php if (isset($_GET['error'])) echo $_GET['error']; ?>
+                <br>
+                <input type ="file" name=my_image">
+
+
+                <button name="new_post">Ajouter le Post</button>
 		</form>
 		<?php
 			unset($_SESSION["error"]);
 			unset($_SESSION["success"]);
 		?>
 	</div>
+
+    <div class="Posts_published">
+        <h2>Post</h2>
+        <?php
+        require_once ('../config/db_connect.php');
+
+        $sql = 'SELECT title, content FROM posts ORDER BY created_at;';
+        $query = mysqli_query($dbLink, $sql);
+        $posts = mysqli_fetch_assoc($query);
+
+        foreach($posts as $post)
+        {
+            echo $post['title'];
+            echo $post['content'];
+        }
+        ?>
+    </div>
 </div>
 
 
 <button name="retour" id="retourPost"><a href="../index.php">Annuler</</button>
+
+
+<nav>
+    <?php include ('../config/pagination.php'); ?>
+    <ul class="pagination">
+        <li class="page-item <?= ($currentPage == 1) ? "disabled" : "" ?>">
+            <a href="./?page=<?= $currentPage - 1 ?>" class="page-link">Précédente</a>
+        </li>
+        <?php for($page = 1; $page <= $nb_page; $page++): ?>
+            <li class="page-item <?= ($currentPage == $page) ? "active" : "" ?>">
+                <a href="./?page=<?= $page ?>" class="page-link"><?= $page ?></a>
+            </li>
+        <?php endfor ?>
+        <li class="page-item <?= ($currentPage == $nb_page) ? "disabled" : "" ?>">
+            <a href="./?page=<?= $currentPage + 1 ?>" class="page-link">Suivante</a>
+        </li>
+    </ul>
+</nav>
+
 
 </body>
