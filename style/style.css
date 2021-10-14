@@ -719,6 +719,9 @@ body:before {
     flex-direction: row;
     text-align: center;
 }
+h3{
+    margin: 20px;
+}
 
 .col{
     display: flex;
