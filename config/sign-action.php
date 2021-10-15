@@ -17,7 +17,7 @@
 <?php
 	session_start();
 	if(($mdp == $mdpconfirm) && ($mdp != NULL) && ($email != NULL)){
-		$query = "INSERT INTO user (Email, Mdp) VALUES ('$email', '$mdp')";
+		$query = "INSERT INTO user (Email, Mdp, type) VALUES ('$email', '$mdp', '2')";
 		 if(!($dbResult = mysqli_query($dbLink, $query))){
 				 echo 'Erreur dans requête<br />'; 
 				 //Affiche le type d'erreur. echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
