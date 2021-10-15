@@ -24,6 +24,50 @@
 			{
 				header("Location: ../index.php");
 				$_SESSION['success'] = "Votre Post a été envoyé.";
+				class post
+				{
+					public $_likes = 0;
+					public $_lol = 0;
+					public $_cool = 0 ;
+					public $_love = 0;
+					public $_waw = 0;
+					public $_colere = 0;
+					public $_NumPost = 0;
+					public function poster($NumPost)
+					{
+						$post = new Post;
+
+						$NumPost += $NumPost;
+					}
+					public function	avote(){
+
+					}
+					public function liker($_like)
+					{
+						$this->_likes = $this->_likes + 1;
+					}
+					public function loler($_lol)
+					{
+						$this->_lol = $this->_lol + 1;
+					}
+					public function cooler($_cool)
+					{
+						$this->_cool = $this->_cool + 1;
+					}
+					public function lover($_love)
+					{
+						$this->_love = $this->_love+ 1;
+					}
+					public function wawer($_waw)
+					{
+						$this->_waw = $this->_waw + 1;
+					}
+					public function colerer($_colere)
+					{
+						$this->_colere = $this->_colere + 1;
+					}
+
+				}
 			}
 	 }
 ?>
