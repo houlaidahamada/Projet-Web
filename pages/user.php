@@ -58,7 +58,9 @@ session_start();
 
     <div style='display: flex;
             flex-direction: column;
-            align-items: center;'>
+            align-items: center;
+            position: relative;
+            top: 10%;'>
         <ul style='
             width: 35%;
             padding: 0;
