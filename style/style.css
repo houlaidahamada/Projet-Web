@@ -694,7 +694,15 @@ body:before {
     margin-bottom: 5%;
     padding: 2%;
     border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+    background-color: ghostwhite
 
+}
+
+.postsList #timeline #newPost:hover{
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
 }
 
 #newPost{
