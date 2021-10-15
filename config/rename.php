@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $newname = $_POST['name'];
     if(isset($_POST['name'])){
      header('Location: ../pages/user.php');
