@@ -132,7 +132,7 @@ session_start();
             								<p>$contenu</p>
             								<p>β$keywords</p>";
             								if($image_url != NULL){
-            								 echo "<p><img src='/images/$image_url'></p>";
+            								 echo "<p><img src='/images/$image_url' style='width: 100%;'></p>";
             								 }
             								 echo"
             								</form>
@@ -149,7 +149,7 @@ session_start();
                                 <p>$contenu</p>
                                  <p>β$keywords</p>";
                                 if($image_url != NULL){
-                                   echo "<p><img src='/images/$image_url'></p>";
+                                   echo "<p><img src='/images/$image_url' style='width: 100%;'></p>";
                                    }
                                    echo "
                                 </article>
