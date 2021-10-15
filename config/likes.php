@@ -10,7 +10,7 @@ if(!isset($_SESSION['likes'])) {
 //if button is pressed, increment counter
 if(isset($_POST['button'])) {
     ++$_SESSION['likes'];
-    if ($_SESSION['likes']%50 == 1)
+    if ($_SESSION['likes'] == $_SESSION['range'])
     {
         echo "<script>alert(\"vous pouvez faire un don à Vanestarre via ce lien\")</script>";
     }
