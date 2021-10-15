@@ -140,7 +140,7 @@ body:before {
     background: linear-gradient(
             rgba(225, 225, 225, 0.6),
             rgba(225, 225, 225, 0.6)
-    ),url(../ressources/img/Fond.png);
+    ),url(../ressources/img/Fond.webp);
     background-size: cover;
     z-index: -1; /* Keep the background behind the content /
     -webkit-filter: blur(8px);
@@ -718,6 +718,7 @@ body:before {
     background-color: ghostwhite
 
 }
+
 #newPost:hover{
 
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
