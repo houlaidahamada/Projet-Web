@@ -119,16 +119,22 @@ session_start();
             				$titre = $post['title'];
             				$contenu = $post['content'];
                             $keywords = $post['keywords'];
+                            $image_url = $post['image_url'];
+
 
                             if(($_SESSION['statut'] == 'admin') || ($_SESSION['statut'] == 'superuser'))
             					{
             						echo "
-            								<form method='POST' action='config/delete.php'>
+            								<form method='POST' action=''>
             								<article id='newPost'>
             								<article>
             								<h1>$titre</h1>
             								<p>$contenu</p>
-            								<p>β$keywords</p>
+            								<p>β$keywords</p>";
+            								if($image_url != NULL){
+            								 echo "<p><img src='/images/$image_url'></p>";
+            								 }
+            								 echo"
             								</form>
             								</article>".
             								likes().
@@ -141,7 +147,11 @@ session_start();
                                 <article>
                                 <h1>$titre</h1>
                                 <p>$contenu</p>
-                                <p>β$keywords</p>
+                                 <p>β$keywords</p>";
+                                if($image_url != NULL){
+                                   echo "<p><img src='/images/$image_url'></p>";
+                                   }
+                                   echo "
                                 </article>
                                 </article>"
                                 ;
