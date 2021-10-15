@@ -60,7 +60,6 @@
 			unset($_SESSION["success"]);
 		?>
 	</div>
-
 </div>
 
 
