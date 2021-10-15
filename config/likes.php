@@ -111,7 +111,7 @@ if($_SESSION['emoji'] == 0){
         <!--<input type="hidden" name="counter" value="<?php echo $_SESSION['counter']; ?>" />-->
         <div class="col">
             <input type="submit" class="like" name="button" value=""/>
-            <div><?php  echo $_SESSION['likes'];?></div>
+            <div><?php  echo ?></div>
         </div>
         <div class="col">
             <input type="submit" class="lol" name="lol" value=""/>
