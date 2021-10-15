@@ -82,19 +82,22 @@ session_start();
                     <!-- Salutation du membre -->
                     <h3>Bienvenue dans vos parametres ";
                     echo($_SESSION['name']);
+                    $max = 15;
+                    $min = 5;
                     echo "</h3><br>
                     <div id='aleatlike'>
                     <div class='slidecontainer''>
-                        Min : <input type='range'' min='1' max='10' value='5' class='slider' id='min'>
+                        Min : <input type='range'' min='1' max='10' value='$min' class='slider' id='min'>
                     </div>
                     <p >Value :<span id='value'></span></p>
                     <div class='slidecontainer'>
-                        Max : <input type='range' min='10' max='50' value='15' class='slider' id='max'>
+                        Max : <input type='range' min='10' max='50' value='$max' class='slider' id='max'>
                     </div>
                     <p >Value :<span id='value2'></span></p>
     
                 </div>
                 <div id='rename'>";
+                    $_SESSION['range'] = $max - $min;
 
                     echo 'Pseudo Actuel : ' . $_SESSION['name'];
                     echo "
